@@ -1,6 +1,6 @@
 # "Semver Compare" Action
 
-A Github Action that semantically compares two versions, like 2.1.1 and 2.3.0
+A Github Action that semantically compares two versions, like 2.1.1 and 2.3.0. Returns -1 if first version is lower, 0 if they are equal and 1 otherwise
 
 ## Inputs
 
@@ -26,10 +26,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: mage-os/github-actions/semver-compare@main
-	with:
-	    version: 2.1.0
-	    compare_against: 2.2.3
-	id: semver-compare
+        id: semver-compare
+        with:
+            version: 2.1.0
+            compare_against: 2.2.3
       - run: echo version ${{ steps.semver-compare.outputs.result }}
         shell: bash
 ```

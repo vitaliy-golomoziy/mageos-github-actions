@@ -12,7 +12,7 @@ inputs:
     description: "The version to compare against"
 
 outputs:
-  result: # id of output
+  result: # returns -1 if version is smaller than compare_against, 0 if they are equals and 1 if version is higher than compser_against
     description: 'The result of comparison'
     value: ${{ steps.semver-compare.outputs.result }}
 
